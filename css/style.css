@@ -199,7 +199,7 @@ nav i {
 /* start about section */
 #about {
   background-color: rgb(0, 1, 0);
-  padding-block: 100px;
+  padding-block:10%;
   border-bottom: #2eb780 dotted 1px;
 }
 #about h4 {
