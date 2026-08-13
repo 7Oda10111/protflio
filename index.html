@@ -22,9 +22,7 @@
   </head>
   <body>
     <!--start navbar section -->
-    <nav
-      class="navbar navbar-expand-lg bg-transparent position-fixed top-0 w-100 z-3"
-    >
+    <nav class="navbar navbar-expand-lg bg-transparent w-100 z-3">
       <div class="container">
         <div class="">
           <span class="title">WE</span> <i class="fa-brands fa-bootstrap"></i>
@@ -81,17 +79,31 @@
     <section id="home">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-md-9">
+          <div class="col-12 col-md-8">
             <h5>i create website for you</h5>
             <h2>web</h2>
             <h2>Developer</h2>
             <p>
               I build responsive, user-friendly websites that work seamlessly
-              across <br />
-              all devices — turning ideas into clean, functional interfaces.
+              across all devices — turning ideas into clean, functional
+              interfaces.
             </p>
+            <a href="#"
+              ><button class="btn view-project-btn rounded-pill">
+                Viw Projects
+              </button></a
+            >
+            <a href="#"
+              ><button class="btn contact-us-btn rounded-pill">
+                Contact us
+              </button></a
+            >
           </div>
-          <div class="col-12 col-md-3">
+          <div class="col-12 col-md-4 home-right-col">
+            <div class="status rounded-pill">
+              <i class="fa-solid fa-circle"></i>
+              <div class="text d-inline-block">avialable for freelance</div>
+            </div>
             <div class="loder-parent">
               <span class="loader mx-auto"></span>
             </div>
@@ -156,6 +168,10 @@
     <!--start skills section -->
     <section id="skills">
       <div class="container">
+        <h2>
+          skills
+          <div class="line"></div>
+        </h2>
         <div class="row">
           <div class="col-12 col-md-3">
             <div class="card">
@@ -193,6 +209,50 @@
       </div>
     </section>
     <!--end skills section -->
+    <!--start project section -->
+    <section id="project">
+      <div class="container">
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide text-center"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <iframe
+                src="https://7oda10111.github.io/protflio/"
+                frameborder="0"
+              ></iframe>
+            </div>
+            <div class="carousel-item">
+              <img src="..." class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="..." class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!--end project section -->
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>

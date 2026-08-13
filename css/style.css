@@ -2,18 +2,34 @@
   font-family: "Rubik", sans-serif;
 }
 /* start nav section */
+.navbar {
+  height: 80px;
+  position: fixed;
+  top: 0;
+  animation: nav 2s ease;
+  /* border-bottom: #2eb780 1px dotted; */
+}
+@keyframes nav {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
+}
 nav .title,
 .title-2 {
   font-family: "Oswald", sans-serif;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 22px;
   letter-spacing: 3px;
   color: white;
 }
 
 nav i {
-  font-size: 35px;
+  font-size: 25px;
   position: relative;
+  z-index: -2;
   right: 10px;
   color: #2eb780;
 }
@@ -40,41 +56,129 @@ nav i {
 /* end nav section */
 /* start home section */
 #home {
-  height: 100vh;
+  /* height: 105dvh; */
   overflow: hidden;
+  padding-block: 50px;
   background: url(../image/image_1920x1280_v2.png);
   background-position: center top -50px;
   background-size: cover;
   border-bottom: #2eb780 dotted 1px;
 }
 #home h5 {
-  margin-top: 25%;
+  margin-top: 10dvh;
+  letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 400;
   color: #2eb780;
+  animation: h5 1s ease-out;
+}
+@keyframes h5 {
+  from {
+    position: relative;
+    top: 20%;
+    opacity: 0%;
+  }
+  to {
+    position: relative;
+    top: 0;
+    opacity: 100%;
+  }
 }
 #home h2 {
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 70px;
   letter-spacing: 10px;
+  list-style: 1.1;
   color: white;
   text-transform: uppercase;
+  animation: h2 2s ease-in-out;
 }
+@keyframes h2 {
+  from {
+    position: relative;
+    left: -100%;
+    opacity: 0;
+  }
+  to {
+    position: relative;
+    left: 0;
+    opacity: 1;
+  }
+}
+
 #home h2::first-letter {
   color: #2eb780;
 }
 #home p {
   color: white;
-  margin-top: 20px;
+  margin-top: 25px;
+  font-size: 20px;
+  line-height: 1.7;
+  max-width: 480px;
+  animation: p 2s ease-in;
+}
+@keyframes p {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#home .view-project-btn,
+#home .contact-us-btn {
+  margin-right: 16px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: all ease 0.5s;
+}
+#home .view-project-btn {
+  background-color: #2eb780;
+  color: black;
+}
+#home .contact-us-btn {
+  color: #2eb780;
+  border: 1.5px solid #2eb780;
+}
+#home .view-project-btn:hover,
+#home .contact-us-btn:hover {
+  box-shadow:
+    0 0 5px rgba(52, 128, 97, 1),
+    0 0 15px rgba(52, 128, 97, 0.8),
+    0 0 30px rgba(52, 128, 97, 0.6);
+}
+
+.home-right-col {
+  animation: p 5s ease-out;
+}
+#home .status {
+  margin: auto;
+  margin-top: 20%;
+  padding: 8px 20px;
+  background-color: #05130d;
+  border: 2px solid #2eb780;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+#home .status i {
+  color: #2eb780;
+
+  font-size: 10px;
+  padding-right: 20px;
+}
+#home .status .text {
+  color: #2eb780;
+  text-transform: capitalize;
 }
 #home .loder-parent .loader {
   --color-1: #fff;
   --color-2: #2eb780;
   --size: 1px;
-  margin-top: 40%;
   position: relative;
-
   width: calc(108 * var(--size));
   display: flex;
   justify-content: space-between;
@@ -148,12 +252,14 @@ nav i {
   }
 }
 #home .loder-parent {
-  height: 100px;
+  height: 50px;
+  margin-top: 20%;
 }
 
 #home .icon-row {
-  margin-top: 5%;
   max-width: 250px;
+  margin-top: 20%;
+
   margin-inline: auto;
 }
 #home .socail-icon {
@@ -177,8 +283,9 @@ nav i {
 }
 
 #home .arrow {
-  margin-top: 20%;
   font-size: 50px;
+    margin-top: 20%;
+
   color: #2eb780;
   margin-left: 40%;
   animation: arrow 1s ease-in-out infinite alternate;
@@ -199,7 +306,8 @@ nav i {
 /* start about section */
 #about {
   background-color: rgb(0, 1, 0);
-  padding-block:10%;
+  padding-block: 10%;
+  height: 110vh;
   border-bottom: #2eb780 dotted 1px;
 }
 #about h4 {
@@ -224,28 +332,42 @@ nav i {
   line-height: 50px;
 }
 #about .parent {
-  border: 3px #008651 solid;
+  border: 2px #2eb780 solid;
   box-shadow: 0 0 30px #2eb780;
   border-radius: 50%;
   overflow: hidden;
-  animation: photo 1s ease-in-out infinite alternate;
+  box-shadow:
+    0 0 5px rgba(52, 128, 97, 1),
+    0 0 15px rgba(52, 128, 97, 0.8),
+    0 0 30px rgba(52, 128, 97, 0.6),
+    0 0 50px rgba(52, 128, 97, 0.4),
+    0 0 100px rgba(52, 128, 97, 0.2);
+  animation: photo 8s ease-in-out infinite;
 }
+
 #about .parent img {
+  transition: all 1s;
+
   width: 100%;
 }
 @keyframes photo {
   0% {
-    transform: translateY(0%);
-    box-shadow: 0 0 20px #2eb780;
+    margin-top: 0%;
   }
-  50% {
-    transform: translateY(5%);
-    box-shadow: 0 0 30px #2eb780;
+  25% {
+    transform: rotate(5deg);
+    margin-top: 10%;
   }
 
+  50% {
+    margin-top: 0%;
+  }
+  75% {
+    transform: rotate(-5deg);
+    margin-top: 10%;
+  }
   100% {
-    transform: translateY(0%);
-    box-shadow: 0 0 20px #2eb780;
+    margin-top: 0%;
   }
 }
 
@@ -256,21 +378,60 @@ nav i {
   background-color: black;
   border-bottom: #2eb780 dotted 1px;
 }
+#skills h2 {
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 5px;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  position: relative;
+}
+#skills h2::before {
+  content: "";
+  width: 100px;
+  height: 0.5px;
+  background-color: #2eb780;
+  position: absolute;
+  bottom: 10px;
+  right: calc(50% - 50px);
+}
+#skills h2::after {
+  content: "";
+  width: 100px;
+  height: 0.5px;
+  background-color: #2eb780;
+  position: absolute;
+  bottom: 20px;
+  right: calc(50% - 50px);
+}
+#skills .line {
+  width: 200px;
+  height: 1px;
+  background-color: #2eb780;
+  position: absolute;
+  bottom: 14.5px;
+  right: calc(50% - 100px);
+}
 #skills .card {
-  border: 1px #008651 solid;
-  box-shadow: 0 0 20px #2eb780;
+  border: 2px #008651 solid;
+  box-shadow:
+    0 0 8px rgb(18, 72, 50, 0.8),
+    0 0 16px rgb(18, 72, 50, 0.7),
+    0 0 32px rgb(18, 72, 50, 0.6);
   background-color: black !important;
   padding-block: 70px;
   text-align: center;
-    transition: all 1s ;
-
+  transition: all 1s;
 }
+
 #skills .card h5 {
   color: white;
   text-transform: uppercase;
   letter-spacing: 5px;
-  font-size: 30px;
-  
+  font-size: 180%;
 }
 #skills .card h5::first-letter {
   color: #2eb780;
@@ -279,15 +440,24 @@ nav i {
   font-size: 70px;
   color: #2eb780;
   padding-top: 20px;
-  transition:    0.5s 0.5s;
+  transition: 0.5s 0.5s;
 }
-#skills .card:hover .icon{
+#skills .card:hover .icon {
   transform: scale(1.4);
-
 }
 #skills .card:hover {
-  transform: rotate(5deg)
-
+  transform: rotate(5deg);
+}
+/* end skills section */
+/* start project section */
+#project {
+  padding-block: 50px;
+  background-color: black;
+  border-bottom: #2eb780 dotted 1px;
+}
+.carousel iframe {
+  width: 100%;
+  height: 100vh;
 }
 
-/* end skills section */
+/* end project section */
