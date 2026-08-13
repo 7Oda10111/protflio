@@ -306,7 +306,7 @@ nav i {
 /* start about section */
 #about {
   background-color: rgb(0, 1, 0);
-  padding-block: 10%;
+  padding-block: 50px;
   height: 110vh;
   border-bottom: #2eb780 dotted 1px;
 }
