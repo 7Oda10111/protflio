@@ -331,6 +331,11 @@ nav i {
   color: white;
   line-height: 50px;
 }
+#about .img-col{
+  height: 500px;
+  background-color: aqua;
+h
+}
 #about .parent {
   border: 2px #2eb780 solid;
   box-shadow: 0 0 30px #2eb780;
