@@ -56,7 +56,7 @@ nav i {
 /* end nav section */
 /* start home section */
 #home {
-  /* height: 105dvh; */
+  height: 105dvh;
   overflow: hidden;
   padding-block: 50px;
   background: url(../image/image_1920x1280_v2.png);
@@ -71,17 +71,16 @@ nav i {
   font-weight: 400;
   color: #2eb780;
   animation: h5 1s ease-out;
+  animation-range: entry 0% cover 40%;
 }
 @keyframes h5 {
   from {
-    position: relative;
-    top: 20%;
-    opacity: 0%;
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
   }
   to {
-    position: relative;
-    top: 0;
-    opacity: 100%;
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 #home h2 {
@@ -92,7 +91,8 @@ nav i {
   list-style: 1.1;
   color: white;
   text-transform: uppercase;
-  animation: h2 2s ease-in-out;
+  animation: h2 2s ease-out;
+  animation-range: entry 0% cover 40%;
 }
 @keyframes h2 {
   from {
@@ -141,6 +141,7 @@ nav i {
 }
 #home .contact-us-btn {
   color: #2eb780;
+  background-color: rgba(0, 0, 0, 0.322);
   border: 1.5px solid #2eb780;
 }
 #home .view-project-btn:hover,
@@ -348,14 +349,13 @@ nav i {
   padding-inline: 50px;
   padding-block: 20px;
 }
-#about .last-satis ,
+#about .last-satis,
 #about .satis {
   color: #bbbbbb;
-    margin: auto;
-    position: relative;
-
+  margin: auto;
+  position: relative;
 }
-#about .last-satis span ,
+#about .last-satis span,
 #about .satis span {
   font-size: 50px;
   font-weight: 700;
@@ -367,9 +367,24 @@ nav i {
   height: 100px;
   background-color: #2a2a2a;
   position: absolute;
-  top:15px;
-  left:150%
-  
+  top: 15px;
+  right: -60px;
+}
+#about .link {
+  font-size: 20px;
+  color: #2eb780;
+  text-transform: capitalize;
+  transition: all 1s ease;
+}
+#about .link i {
+  transition: all 1s ease;
+}
+#about .link:hover {
+  color: white;
+  transform: scale(1.02);
+}
+#about .link:hover i {
+  transform: translateX(10px);
 }
 
 #about .parent {
@@ -419,14 +434,22 @@ nav i {
   background-color: black;
   border-bottom: #2eb780 dotted 1px;
 }
+#skills h5 {
+  color: #2eb780;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
 #skills h2 {
   color: white;
   text-align: center;
-  font-size: 40px;
+  font-size: 50px;
   letter-spacing: 5px;
   margin-bottom: 40px;
   padding-bottom: 30px;
-  font-weight: 800;
+  font-weight: 600;
   text-transform: uppercase;
   position: relative;
 }
@@ -470,6 +493,7 @@ nav i {
 
 #skills .card h5 {
   color: white;
+  margin-top: 50px;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 180%;
@@ -477,17 +501,43 @@ nav i {
 #skills .card h5::first-letter {
   color: #2eb780;
 }
+#skills h6 {
+  color: #bbbbbb;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 100%;
+}
 #skills .card .icon {
+  background: #05130d;
   font-size: 70px;
   color: #2eb780;
-  padding-top: 20px;
-  transition: 0.5s 0.5s;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  padding-top: 10px;
+  transition: 0.7s ease-in-out;
+  border: #2eb780 2px solid;
 }
 #skills .card:hover .icon {
-  transform: scale(1.4);
+  transform: scale(1.1);
+  box-shadow:
+    0 0 5px rgba(52, 128, 97, 1),
+    0 0 15px rgba(52, 128, 97, 0.8),
+    0 0 30px rgba(52, 128, 97, 0.6),
+    0 0 50px rgba(52, 128, 97, 0.4),
+    0 0 100px rgba(52, 128, 97, 0.2);
 }
 #skills .card:hover {
-  transform: rotate(5deg);
+  box-shadow:
+    0 0 5px rgba(52, 128, 97, 1),
+    0 0 15px rgba(52, 128, 97, 0.8),
+    0 0 30px rgba(52, 128, 97, 0.6),
+    0 0 50px rgba(52, 128, 97, 0.4),
+    0 0 100px rgba(52, 128, 97, 0.2);
 }
 /* end skills section */
 /* start project section */
@@ -496,9 +546,332 @@ nav i {
   background-color: black;
   border-bottom: #2eb780 dotted 1px;
 }
-.carousel iframe {
-  width: 100%;
-  height: 100vh;
+#project h5 {
+  color: #2eb780;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+#project h2 {
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: 5px;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+}
+#project h2::before {
+  content: "";
+  width: 100px;
+  height: 0.5px;
+  background-color: #2eb780;
+  position: absolute;
+  bottom: 10px;
+  right: calc(50% - 50px);
+}
+#project h2::after {
+  content: "";
+  width: 100px;
+  height: 0.5px;
+  background-color: #2eb780;
+  position: absolute;
+  bottom: 20px;
+  right: calc(50% - 50px);
+}
+#project .line {
+  width: 200px;
+  height: 1px;
+  background-color: #2eb780;
+  position: absolute;
+  bottom: 14.5px;
+  right: calc(50% - 100px);
+}
+#project .project-card {
+  border: 1.5px solid #2eb780;
+  background-color: black;
+  min-height: 500px;
+  transition: all 1s ease;
+  overflow: hidden;
+}
+#project .project-card:hover {
+  box-shadow:
+    0 0 5px rgba(52, 128, 97, 1),
+    0 0 15px rgba(52, 128, 97, 0.8),
+    0 0 30px rgba(52, 128, 97, 0.6),
+    0 0 50px rgba(52, 128, 97, 0.4),
+    0 0 100px rgba(52, 128, 97, 0.2),
+    0 0 120px rgba(52, 128, 97, 0.1);
+}
+#project .project-card:hover img {
+  transform: scale(1.05) translateY(5px);
+  filter: brightness(1.5);
+}
+
+#project .project-card img {
+  border-bottom: 1px solid #2eb780;
+  transition: all 1s ease;
+  filter: brightness(0.7);
+}
+#project .project-card h5 {
+  color: white;
+  text-align: left;
+  margin: 20px 6px 0;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+#project .project-card p {
+  color: #707070;
+  margin: 10px 6px 0;
+}
+#project .project-card .card-tech {
+  background-color: #05130d;
+  width: 60px;
+  height: 20px;
+  text-align: center;
+  margin-block: 10px;
+  padding: 15px;
+  border: #2eb780 0.5px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#project .project-card .card-tech:hover i {
+  transform: translateY(-30px) rotatey(360deg);
+}
+#project .project-card .card-tech i {
+  color: #2eb780;
+  transition: all 2s ease;
+}
+.card-tech-parent {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2eb780;
+}
+#project .project-card .live-demo,
+#project .project-card .github {
+  font-size: 16px;
+  color: #2eb780;
+  text-transform: uppercase;
+  transition: all 1s ease;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+}
+#project .project-card .github {
+  color: white;
+}
+#project .project-card .live-demo i {
+  transition: transform 1s ease 0.5s;
+}
+#project .project-card .github i {
+  transition: transform 1s ease 0.5s;
+}
+#project .project-card .live-demo:hover {
+  color: white;
+}
+#project .project-card .github:hover {
+  color: #2eb780;
+}
+#project .project-card .github:hover i {
+  transform: rotateY(180deg);
+}
+#project .project-card .live-demo:hover i {
+  transform: rotate(360deg);
+}
+#project .nav-catg button {
+  color: white !important;
+  position: relative;
+}
+#project .nav-catg .active::after {
+  content: "";
+  height: 2px;
+  background-color: #2eb780;
+  position: absolute;
+  bottom: 0;
+  right: 0%;
+  left: 0%;
+  transition: all 1s;
+}
+#project .nav-catg button::after {
+  content: "";
+  height: 2px;
+  background-color: #2eb780;
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  left: 50%;
+  transition: all 1s;
+}
+
+#project .nav-catg button:hover {
+  color: #2eb780 !important;
 }
 
 /* end project section */
+
+/* start  contact section */
+#contact {
+  padding-block: 50px;
+  background-color: black;
+  border-bottom: #2eb780 dotted 1px;
+}
+#contact h5 {
+  color: #2eb780;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+#contact h2 {
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: 5px;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+}
+#contact h2::before {
+  content: "";
+  width: 100px;
+  height: 0.5px;
+  background-color: #2eb780;
+  position: absolute;
+  bottom: 10px;
+  right: calc(50% - 50px);
+}
+#contact h2::after {
+  content: "";
+  width: 100px;
+  height: 0.5px;
+  background-color: #2eb780;
+  position: absolute;
+  bottom: 20px;
+  right: calc(50% - 50px);
+}
+#contact .line {
+  width: 200px;
+  height: 1px;
+  background-color: #2eb780;
+  position: absolute;
+  bottom: 14.5px;
+  right: calc(50% - 100px);
+}
+#contact .parent {
+  padding-bottom: 10px;
+}
+#contact .parent .child {
+  width: 50px;
+  height: 50px;
+  border: 1.5px #2eb780 solid;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+#contact .parent .child a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  text-decoration: none;
+}
+#contact .parent .child i {
+  color: #2eb780;
+  font-size: 25px;
+}
+#contact .parent p {
+  margin-top: 15px;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+#contact .parent p .title {
+  display: block;
+  color: #bbbbbb;
+  text-transform: uppercase;
+}
+#contact .icon-row {
+  max-width: 250px;
+  margin-top: 10px;
+  margin-inline: auto;
+}
+#contact .socail-icon {
+  height: 25px;
+  width: 25px;
+  border: 1.5px solid rgba(255, 255, 255, 0.973);
+  border-radius: 50%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+}
+#contact .socail-icon i {
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+}
+#contact .socail-icon:hover {
+  background-color: #2eb780;
+  transform: translateY(-10px);
+}
+#contact input,
+#contact textarea {
+  background-color: #0a0a0a !important;
+  border: #757575 1px solid !important;
+}
+#contact .contact-form::placeholder {
+  color: #757575 !important;
+  text-transform: capitalize;
+}
+#contact input:focus,
+#contact textarea:focus {
+  border: #2eb780 1px solid !important;
+  box-shadow:
+    0 0 5px rgba(52, 128, 97, 1),
+    0 0 15px rgba(52, 128, 97, 0.8),
+    0 0 30px rgba(52, 128, 97, 0.6) !important;
+}
+#contact .contact-btn {
+  border: #008651 1.5px solid !important;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: 1s all ease;
+}
+#contact .contact-btn::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #2eb780;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: -1;
+  transition: 1s all ease;
+}
+#contact .contact-btn:hover::after {
+  left: 0;
+}
+#contact .contact-btn:hover {
+  box-shadow:
+    0 0 30px rgba(52, 128, 97, 0.6),
+    0 0 50px rgba(52, 128, 97, 0.4),
+    0 0 100px rgba(52, 128, 97, 0.2);
+}
+
+/* end contact section */
+/* start footer section */
+footer {
+  padding-block: 75px;
+  background-color: black;
+  border-top: #2eb780 dotted 1px;
+}
+
+/* end footer section */
