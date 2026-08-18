@@ -57,7 +57,7 @@ nav i {
 /* start home section */
 #home {
   height: 105dvh;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding-block: 50px;
   background: url(../image/image_1920x1280_v2.png);
   background-position: center top -50px;
