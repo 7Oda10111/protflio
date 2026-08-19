@@ -1,6 +1,23 @@
 * {
   font-family: "Rubik", sans-serif;
   cursor: none;
+  
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2eb780;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #25a06e;
 }
 .custom-cursor {
   width: 20px;
