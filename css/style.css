@@ -1,13 +1,62 @@
 * {
   font-family: "Rubik", sans-serif;
+  cursor: none;
+}
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #2eb780;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+  z-index: 9999;
+}
+
+.custom-cursor.hover {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(46, 183, 128, 0.2);
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+#home .container {
+  position: relative;
+  z-index: 1; 
 }
 /* start nav section */
 .navbar {
-  height: 80px;
   position: fixed;
   top: 0;
-  animation: nav 2s ease;
-  /* border-bottom: #2eb780 1px dotted; */
+  transition: 1s all ;
+}
+.scroll {
+  border-bottom: #2eb780 1px solid;
+  backdrop-filter: blur(10px);
+  height: 80px;
+    box-shadow:
+  
+    0 0 30px rgba(52, 128, 97, 0.6),
+    0 0 50px rgba(52, 128, 97, 0.4),
+    0 0 100px rgba(52, 128, 97, 0.2);
 }
 @keyframes nav {
   from {
@@ -17,6 +66,32 @@
     top: 0;
   }
 }
+.navbar .nav-item .active {
+  position: relative;
+  color: #2eb780 !important;
+}
+
+.navbar .nav-item .nav-link::after {
+  content: "";
+  height: 2px;
+  background-color: #2eb780;
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  left: 50%;
+  transition: all 1s;
+}
+.navbar .nav-item .active::after {
+  content: "";
+  height: 2px;
+  background-color: #2eb780;
+  position: absolute;
+  bottom: 0;
+  right: 0%;
+  left: 0%;
+  transition: all 1s;
+}
+
 nav .title,
 .title-2 {
   font-family: "Oswald", sans-serif;
@@ -38,6 +113,7 @@ nav i {
   font-weight: 400;
   color: white !important;
   transition: all 0.5s;
+  position: relative;
 }
 .nav-btn:hover {
   color: #2eb780 !important;
@@ -56,8 +132,8 @@ nav i {
 /* end nav section */
 /* start home section */
 #home {
-  height: 105dvh;
-  /* overflow: hidden; */
+  min-height: 105dvh;
+  overflow: hidden;
   padding-block: 50px;
   background: url(../image/image_1920x1280_v2.png);
   background-position: center top -50px;
@@ -150,6 +226,9 @@ nav i {
     0 0 5px rgba(52, 128, 97, 1),
     0 0 15px rgba(52, 128, 97, 0.8),
     0 0 30px rgba(52, 128, 97, 0.6);
+}
+@keyframes button {
+  
 }
 
 .home-right-col {
@@ -307,6 +386,7 @@ nav i {
 /* start about section */
 #about {
   padding-block: 50px;
+  overflow: hidden;
   background-color: rgb(0, 1, 0);
   border-bottom: #2eb780 dotted 1px;
 }
@@ -392,6 +472,7 @@ nav i {
   box-shadow: 0 0 30px #2eb780;
   border-radius: 50%;
   overflow: hidden;
+  margin-top: 20%;
   box-shadow:
     0 0 5px rgba(52, 128, 97, 1),
     0 0 15px rgba(52, 128, 97, 0.8),
@@ -408,22 +489,20 @@ nav i {
 }
 @keyframes photo {
   0% {
-    margin-top: 0%;
+    transform: translateX(0%);
   }
   25% {
-    transform: rotate(5deg);
-    margin-top: 10%;
+    transform: translateY(10%) rotate(5deg);
   }
 
   50% {
-    margin-top: 0%;
+    transform: translateX(0%);
   }
   75% {
-    transform: rotate(-5deg);
-    margin-top: 10%;
+    transform: translateY(10%) rotate(-5deg);
   }
   100% {
-    margin-top: 0%;
+    transform: translateX(0%);
   }
 }
 
